@@ -11,8 +11,10 @@ export const styles = StyleSheet.create({
   },
   sectionDescription: {
     marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
+    fontSize: 28,
+    fontWeight: '600',
+    textAlign: 'center',
+    color: 'red',
   },
   highlight: {
     fontWeight: '700',

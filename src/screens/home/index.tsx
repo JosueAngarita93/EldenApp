@@ -30,7 +30,7 @@ const Home = ({title, navigation}) => {
           style={{
             backgroundColor: isDarkMode ? Colors.black : Colors.white,
           }}>
-          <Text>{title}</Text>
+          <Text style={styles.sectionDescription} >{title}</Text>
           <Button
             title="Go to Details"
             onPress={() => navigation.navigate('Details')}
