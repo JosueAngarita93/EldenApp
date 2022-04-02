@@ -32,7 +32,27 @@ const Home = ({title, navigation}) => {
           }}>
           <Text style={styles.sectionDescription} >{title}</Text>
           <Button
-            title="Go to Details"
+            title="Guias jefes"
+            onPress={() => navigation.navigate('Details')}
+            />
+          <Button
+            title="Misiones Segundarias"
+            onPress={() => navigation.navigate('Details')}
+            />
+          <Button
+            title="Guias Armas"
+            onPress={() => navigation.navigate('Details')}
+            />
+          <Button
+            title="Guias Hechisos"
+            onPress={() => navigation.navigate('Details')}
+            />
+          <Button
+            title="Guias Armaduras"
+            onPress={() => navigation.navigate('Details')}
+            />
+          <Button
+            title="Guias Logros y Trofeos"
             onPress={() => navigation.navigate('Details')}
           />
         </View>

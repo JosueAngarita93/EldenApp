@@ -9,37 +9,33 @@ import {
   Button,
   Alert,
 } from 'react-native';
-import YouTube from 'react-native-youtube';
 import {styles} from './styles';
 
-const Details = () => {
-  const [playing, setPlaying] = useState(true);
-  const onStateChange = useCallback(state => {
-    if (state === 'ended') {
-      setPlaying(false);
-      Alert.alert('video has finished playing!');
-    }
-  }, []);
-  const togglePlaying = useCallback(() => {
-    setPlaying(prev => !prev);
-  }, []);
+
+import {Colors} from 'react-native/Libraries/NewAppScreen';
+import {newLocal} from './styles';
+
+const Details = ({title, navigation}) => {
+  const isDarkMode = useColorScheme() === 'dark';
+
+  const backgroundStyle = {
+    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
+  };
   return (
-    <SafeAreaView>
-      <View style={styles.detailsContainer}>
-        <Text style={styles.sectionTitle}>Details Screen</Text>
-        <YouTube
-          apiKey="1111"
-          videoId="i333UOb0x8k"
-          play
-          fullscreen={false}
-          loop={false}
-          onReady={() => {}}
-          onChangeState={() => {}}
-          onChangeQuality={() => {}}
-          onError={() => {}}
-          style={styles.youtubeContainer}
-        />
-      </View>
+    <SafeAreaView style={backgroundStyle}>
+      <View
+          style={{
+          backgroundColor: isDarkMode ? Colors.black : Colors.white,
+        }}>
+        <Text style={newLocal.sectionDescription} >{title}</Text>
+          <Text style={newLocal.sectionDescription} >{title}</Text>
+          <Button
+            title="JEFES EN
+            LINGRAVE"
+            onPress={() => navigation.navigate('Lingrave')}
+          />
+        </View>
+      
     </SafeAreaView>
   );
 };
