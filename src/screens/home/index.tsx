@@ -1,23 +1,49 @@
 import React from 'react';
-import {
-  
-  SafeAreaView,
-
-} from 'react-native';
-import { CustonButton } from '../../components/Buttons';
-
+import {SafeAreaView} from 'react-native';
+import CustonButton from '../../components/CustomButton';
+import {styles} from './styles';
 
 const Home = ({navigation}) => {
   return (
-    <SafeAreaView style = {{backgroundColor: '#564215', flex: 1,}}>
-      <CustonButton color = 'red' textColor = 'black' text = "Click Me" onPress={() => navigation.navigate('Details')} />
-      <CustonButton color = 'blue' textColor = 'black' text = "Click Me" onPress={() => navigation.navigate('Details')} />
-      <CustonButton color = 'blue' textColor = 'black' text = "Click Me" onPress={() => navigation.navigate('Details')} />
-      <CustonButton color = 'blue' textColor = 'black' text = "Click Me" onPress={() => navigation.navigate('Details')} />
-      <CustonButton color = 'blue' textColor = 'black' text = "Click Me" onPress={() => navigation.navigate('Details')} />
+    <SafeAreaView style={styles.SafeAreaContainer}>
+      <CustonButton
+        color="red"
+        onPress={() => {
+          navigation.navigate('Details', {
+            title: 'anything you want here',
+          });
+        }}
+      />
+      <CustonButton
+        onPress={() => {
+          navigation.navigate('Details', {
+            title: 'anything you want here',
+          });
+        }}
+      />
+      <CustonButton
+        onPress={() => {
+          navigation.navigate('Details', {
+            title: 'anything you want here',
+          });
+        }}
+      />
+      <CustonButton
+        onPress={() => {
+          navigation.navigate('Details', {
+            title: 'anything you want here',
+          });
+        }}
+      />
+      <CustonButton
+        onPress={() => {
+          navigation.navigate('Details', {
+            title: 'anything you want here',
+          });
+        }}
+      />
     </SafeAreaView>
   );
 };
-
 
 export default Home;

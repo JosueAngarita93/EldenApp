@@ -13,11 +13,9 @@ const App = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Home">
-        <Stack.Screen name="Home">
-        {props => <Home {...props} title={'Elden App'} />}
-        </Stack.Screen>
+        <Stack.Screen name="Home" component={Home} />
         <Stack.Screen name="Details" component={Details} />
-      <Stack.Screen name="Lingrave" component={Lingrave} />
+        <Stack.Screen name="Lingrave" component={Lingrave} />
       </Stack.Navigator>
     </NavigationContainer>
   );

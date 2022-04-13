@@ -1,41 +1,21 @@
-import React, {useState, useCallback, useRef} from 'react';
-import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  Text,
-  useColorScheme,
-  View,
-  Button,
-  Alert,
-} from 'react-native';
+import React from 'react';
+import {SafeAreaView, Text, View} from 'react-native';
 import {styles} from './styles';
+import CustonButton from '../../components/CustomButton';
 
+const Details = ({route, navigation}) => {
+  const {title} = route.params;
 
-import {Colors} from 'react-native/Libraries/NewAppScreen';
-import {newLocal} from './styles';
-
-const Details = ({title, navigation}) => {
-  const isDarkMode = useColorScheme() === 'dark';
-
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  };
   return (
-    <SafeAreaView style={backgroundStyle}>
-      <View
-          style={{
-          backgroundColor: isDarkMode ? Colors.black : Colors.white,
-        }}>
-        <Text style={newLocal.sectionDescription} >{title}</Text>
-          <Text style={newLocal.sectionDescription} >{title}</Text>
-          <Button
-            title="JEFES EN
-            LINGRAVE"
-            onPress={() => navigation.navigate('Lingrave')}
-          />
-        </View>
-      
+    <SafeAreaView>
+      <View>
+        <Text style={styles.sectionDescription}>{title}</Text>
+        <CustonButton
+          text="JEFES EN LINGRAVE"
+          color={'gray'}
+          onPress={() => navigation.navigate('Lingrave')}
+        />
+      </View>
     </SafeAreaView>
   );
 };
