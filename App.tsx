@@ -5,7 +5,6 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import Home from './src/screens/home';
 import Details from './src/screens/details';
 import Lingrave from './src/screens/lingrave';
-
 const Stack = createNativeStackNavigator();
 const App = () => {
   React.useEffect(() => {
