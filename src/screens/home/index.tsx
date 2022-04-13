@@ -1,64 +1,23 @@
 import React from 'react';
 import {
+  
   SafeAreaView,
-  ScrollView,
-  StatusBar,
-  Text,
-  useColorScheme,
-  View,
-  Button,
+
 } from 'react-native';
+import { CustonButton } from '../../components/Buttons';
 
-import {Colors} from 'react-native/Libraries/NewAppScreen';
 
-import {styles} from './styles';
-
-const Home = ({title, navigation}) => {
-  const isDarkMode = useColorScheme() === 'dark';
-
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  };
-
+const Home = ({navigation}) => {
   return (
-    <SafeAreaView style={backgroundStyle}>
-      <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-      <ScrollView
-        contentInsetAdjustmentBehavior="automatic"
-        style={backgroundStyle}>
-        <View
-          style={{
-            backgroundColor: isDarkMode ? Colors.black : Colors.white,
-          }}>
-          <Text style={styles.sectionDescription} >{title}</Text>
-          <Button
-            title="Guias jefes"
-            onPress={() => navigation.navigate('Details')}
-            />
-          <Button
-            title="Misiones Segundarias"
-            onPress={() => navigation.navigate('Details')}
-            />
-          <Button
-            title="Guias Armas"
-            onPress={() => navigation.navigate('Details')}
-            />
-          <Button
-            title="Guias Hechisos"
-            onPress={() => navigation.navigate('Details')}
-            />
-          <Button
-            title="Guias Armaduras"
-            onPress={() => navigation.navigate('Details')}
-            />
-          <Button
-            title="Guias Logros y Trofeos"
-            onPress={() => navigation.navigate('Details')}
-          />
-        </View>
-      </ScrollView>
+    <SafeAreaView style = {{backgroundColor: '#564215', flex: 1,}}>
+      <CustonButton color = 'red' textColor = 'black' text = "Click Me" onPress={() => navigation.navigate('Details')} />
+      <CustonButton color = 'blue' textColor = 'black' text = "Click Me" onPress={() => navigation.navigate('Details')} />
+      <CustonButton color = 'blue' textColor = 'black' text = "Click Me" onPress={() => navigation.navigate('Details')} />
+      <CustonButton color = 'blue' textColor = 'black' text = "Click Me" onPress={() => navigation.navigate('Details')} />
+      <CustonButton color = 'blue' textColor = 'black' text = "Click Me" onPress={() => navigation.navigate('Details')} />
     </SafeAreaView>
   );
 };
+
 
 export default Home;
