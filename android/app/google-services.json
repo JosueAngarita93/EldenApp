@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "792971946158",
+    "project_id": "eldenapp-ec1e3",
+    "storage_bucket": "eldenapp-ec1e3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:792971946158:android:c8d481e8d1cf109e9ba53f",
+        "android_client_info": {
+          "package_name": "com.eldenapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "792971946158-mnq7le1ljfvbvuavd83aco5n93fm6u01.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBbaANxXOTXKT8D9iuqUgU7gNgZuqVxOhw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "792971946158-mnq7le1ljfvbvuavd83aco5n93fm6u01.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
