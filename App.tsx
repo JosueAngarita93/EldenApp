@@ -15,7 +15,7 @@ import Lingrave from './src/screens/lingrave';
 function Profile() {
   return (
     <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-      <Text>Profile!</Text>
+      <Text>Profile</Text>
     </View>
   );
 }
