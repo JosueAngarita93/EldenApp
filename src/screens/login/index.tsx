@@ -7,8 +7,9 @@ import {
   Platform,
   StyleSheet,
   ScrollView,
-  Button,
   TextInput,
+  ImageBackground,
+  Pressable,
 } from 'react-native';
 import {
   GoogleSignin,
@@ -18,6 +19,7 @@ import {
 
 import SocialButton from '../../components/SocialButton';
 import {objectStoreData, objectGetData} from '../../utils/storage';
+import {styles} from './style';
 
 const Login = ({navigation}) => {
   const [email, setEmail] = useState('');
@@ -53,35 +55,39 @@ const Login = ({navigation}) => {
     validationUSer();
   }, []);
   return (
-    <ScrollView contentContainerStyle={styles.container}>
+    <View style={styles.container}>
       <Image
-        // source={require('../assets/rn-social-logo.png')}
         style={styles.logo}
+        source={{
+          uri: 'https://image.api.playstation.com/vulcan/ap/rnd/202110/2000/N0JLrzNUy1Ep72Ynl0Gyi1x6.png',
+        }}
       />
-      <Text style={styles.text}>Elden App</Text>
+      <Text style={styles.text}>App</Text>
 
       <TextInput
         value={email}
         onChangeText={userEmail => setEmail(userEmail)}
         placeholder="Email"
-        // icon="user"
         keyboardType="email-address"
         autoCapitalize="none"
         autoCorrect={false}
+        style={styles.textimput}
       />
 
       <TextInput
         value={password}
         onChangeText={userPassword => setPassword(userPassword)}
         placeholder="Password"
-        //icon="lock"
         secureTextEntry={true}
+        style={styles.textimput}
       />
 
-      <Button
-        title="Sign In"
-        //onPress={() => login(email, password)}
-      />
+      <TouchableOpacity
+        style={styles.button}
+        // onPress={onPress}
+      >
+        <Text style={styles.textbutton}>Sing in</Text>
+      </TouchableOpacity>
 
       <TouchableOpacity style={styles.forgotButton} onPress={() => {}}>
         <Text style={styles.navButtonText}>Forgot Password?</Text>
@@ -89,13 +95,13 @@ const Login = ({navigation}) => {
 
       {Platform.OS === 'android' ? (
         <View>
-          <SocialButton
+          {/* <SocialButton
             buttonTitle="Sign In with Facebook"
             btnType="facebook"
             color="#4867aa"
             backgroundColor="#e6eaf4"
             // onPress={() => fbLogin()}
-          />
+          /> */}
           <GoogleSigninButton
             style={{width: 192, height: 48}}
             size={GoogleSigninButton.Size.Wide}
@@ -112,40 +118,8 @@ const Login = ({navigation}) => {
           Don't have an acount? Create here
         </Text>
       </TouchableOpacity>
-    </ScrollView>
+    </View>
   );
 };
 
 export default Login;
-
-const styles = StyleSheet.create({
-  container: {
-    justifyContent: 'center',
-    alignItems: 'center',
-    padding: 20,
-    paddingTop: 50,
-  },
-  logo: {
-    height: 150,
-    width: 150,
-    resizeMode: 'cover',
-  },
-  text: {
-    fontFamily: 'Kufam-SemiBoldItalic',
-    fontSize: 28,
-    marginBottom: 10,
-    color: '#051d5f',
-  },
-  navButton: {
-    marginTop: 15,
-  },
-  forgotButton: {
-    marginVertical: 35,
-  },
-  navButtonText: {
-    fontSize: 18,
-    fontWeight: '500',
-    color: '#2e64e5',
-    fontFamily: 'Lato-Regular',
-  },
-});
