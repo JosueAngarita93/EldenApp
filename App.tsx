@@ -5,7 +5,7 @@ import {Text, View} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import Icon from 'react-native-vector-icons/FontAwesome';
+import CustonIcon from './src/ui/Icon';
 import {GoogleSignin} from '@react-native-google-signin/google-signin';
 
 import Login from './src/screens/login';
@@ -42,9 +42,7 @@ function MyTabs() {
         options={{
           tabBarLabel: 'Home',
           headerShown: false,
-          tabBarIcon: ({color, size}) => (
-            <Icon name="rocket" size={30} color="#900" />
-          ),
+          tabBarIcon: () => <CustonIcon name="home" />,
         }}
       />
       <Tab.Screen
@@ -53,9 +51,7 @@ function MyTabs() {
         options={{
           tabBarLabel: 'Updates',
           headerShown: false,
-          tabBarIcon: ({color, size}) => (
-            <Icon name="rocket" size={30} color="#900" />
-          ),
+          tabBarIcon: () => <CustonIcon name="bell" />,
         }}
       />
       <Tab.Screen
@@ -64,9 +60,7 @@ function MyTabs() {
         options={{
           tabBarLabel: 'Profile',
           headerShown: false,
-          tabBarIcon: ({color, size}) => (
-            <Icon name="rocket" size={30} color="#900" />
-          ),
+          tabBarIcon: () => <CustonIcon name="user" />,
         }}
       />
     </Tab.Navigator>

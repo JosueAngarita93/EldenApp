@@ -6,7 +6,8 @@ import {SafeAreaView, View, Text, Image, TouchableOpacity} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {GoogleSignin} from '@react-native-google-signin/google-signin';
 import {removeItemValue, objectGetData} from '../../utils/storage';
-
+import OrderSummaryHeader from '../../components/OrderSummaryHeader';
+import {dataHeader} from '../../dataBackend/order/mocks';
 function HomeScreen({navigation}) {
   const validationUSer = async () => {
     const User = await objectGetData('@User');
@@ -30,6 +31,7 @@ function HomeScreen({navigation}) {
 
   return (
     <SafeAreaView style={styles.SafeAreaContainer}>
+      <OrderSummaryHeader item={dataHeader} />
       <TouchableOpacity onPress={loguot}>
         <Image
           style={styles.tinyLogo}
